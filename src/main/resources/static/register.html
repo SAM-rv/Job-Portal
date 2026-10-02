@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register - Job Portal</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="page">
+  <div class="container-narrow">
+    <h1 class="center">Job Portal</h1>
+    <p class="center">Create an account</p>
+
+    <div class="card">
+      <div id="registerAlert"></div>
+      <form id="registerForm" novalidate>
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+          <p class="hint">8-20 characters.</p>
+        </div>
+        <div class="form-group">
+          <label>Account Type</label>
+          <div class="btn-row">
+            <label style="font-weight:normal;"><input type="radio" name="role" value="Candidate" checked /> Candidate</label>
+            <label style="font-weight:normal;"><input type="radio" name="role" value="Recruiter" /> Recruiter</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+      </form>
+    </div>
+
+    <p class="center muted">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script>initRegisterPage();</script>
+</body>
+</html>

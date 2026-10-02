@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Job Details - Job Portal</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="page">
+  <nav class="navbar" id="navbar"></nav>
+  <div class="container">
+    <p><a href="jobs.html">&larr; Back to Browse Jobs</a></p>
+    <div id="detailAlert"></div>
+    <div id="jobDetailContainer"></div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/jobs.js"></script>
+<script>
+  // Accessible to both roles: candidates apply from here, recruiters land
+  // here via "View" from My Jobs (read-only).
+  const _user = requireAuth();
+  renderNavbar(_user && _user.role === "Recruiter" ? "jobs" : "jobs");
+  initJobDetailsPage();
+</script>
+</body>
+</html>

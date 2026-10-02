@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Jobs - Job Portal</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="page">
+  <nav class="navbar" id="navbar"></nav>
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+      <h1>My Jobs</h1>
+      <a href="create-job.html" class="btn btn-primary btn-sm">Create Job</a>
+    </div>
+    <div id="myJobsAlert"></div>
+    <div id="myJobsList"></div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/jobs.js"></script>
+<script>
+  requireAuth("Recruiter");
+  renderNavbar("jobs");
+  initMyJobsPage();
+</script>
+</body>
+</html>

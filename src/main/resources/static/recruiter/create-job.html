@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create Job - Job Portal</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="page">
+  <nav class="navbar" id="navbar"></nav>
+  <div class="container">
+    <h1>Create Job</h1>
+    <div class="card" style="max-width:680px;">
+      <div id="createJobAlert"></div>
+      <form id="createJobForm" novalidate>
+        <div class="form-group">
+          <label for="j_title">Title</label>
+          <input type="text" id="j_title" required />
+        </div>
+        <div class="form-group">
+          <label for="j_description">Description</label>
+          <textarea id="j_description" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="j_company">Company</label>
+            <input type="text" id="j_company" required />
+          </div>
+          <div class="form-group">
+            <label for="j_location">Location</label>
+            <input type="text" id="j_location" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="j_minSalary">Minimum Salary</label>
+            <input type="number" id="j_minSalary" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="j_maxSalary">Maximum Salary</label>
+            <input type="number" id="j_maxSalary" min="0" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="j_skills">Required Skills</label>
+          <input type="text" id="j_skills" placeholder="e.g. Java, Spring Boot, SQL" required />
+          <p class="hint">Comma separated.</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="j_minExperience">Minimum Experience (years)</label>
+            <input type="number" id="j_minExperience" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="j_empType">Employment Type</label>
+            <input type="text" id="j_empType" placeholder="exact enum value, e.g. FULL_TIME" required />
+            <p class="hint">Must exactly match a constant in your EmploymentTypes enum.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="j_deadline">Application Deadline</label>
+          <input type="date" id="j_deadline" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Post Job</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/jobs.js"></script>
+<script>
+  requireAuth("Recruiter");
+  renderNavbar("create-job");
+  initCreateJobPage();
+</script>
+</body>
+</html>

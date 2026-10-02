@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard - Job Portal</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="page">
+  <nav class="navbar" id="navbar"></nav>
+  <div class="container">
+    <h1>Welcome back</h1>
+    <p>Here's what you can do as a candidate.</p>
+
+    <div class="card-grid">
+      <a class="link-card" href="jobs.html">
+        <h3>Browse Jobs</h3>
+        <p>Search and filter open positions.</p>
+      </a>
+      <a class="link-card" href="applications.html">
+        <h3>My Applications</h3>
+        <p>Track the jobs you've applied to.</p>
+      </a>
+      <a class="link-card" href="profile.html">
+        <h3>My Profile</h3>
+        <p>Keep your skills and resume up to date.</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+  requireAuth("Candidate");
+  renderNavbar("dashboard");
+</script>
+</body>
+</html>

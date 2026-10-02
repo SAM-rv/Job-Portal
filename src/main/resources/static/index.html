@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Job Portal</title>
+<script src="js/auth.js"></script>
+</head>
+<body>
+<script>
+  const user = getSessionUser();
+  if (user) {
+    window.location.replace(user.role === "Candidate" ? "candidate/dashboard.html" : "recruiter/dashboard.html");
+  } else {
+    window.location.replace("login.html");
+  }
+</script>
+</body>
+</html>

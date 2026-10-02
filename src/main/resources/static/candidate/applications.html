@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Applications - Job Portal</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="page">
+  <nav class="navbar" id="navbar"></nav>
+  <div class="container">
+    <h1>My Applications</h1>
+    <div id="applicationsAlert"></div>
+    <div id="applicationsList"></div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/jobs.js"></script>
+<script src="../js/applications.js"></script>
+<script>
+  requireAuth("Candidate");
+  renderNavbar("applications");
+  initCandidateApplicationsPage();
+</script>
+</body>
+</html>

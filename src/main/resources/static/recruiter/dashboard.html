@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard - Job Portal</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="page">
+  <nav class="navbar" id="navbar"></nav>
+  <div class="container">
+    <h1>Welcome back</h1>
+    <p>Here's what you can do as a recruiter.</p>
+
+    <div class="card-grid">
+      <a class="link-card" href="profile.html">
+        <h3>Company Profile</h3>
+        <p>Set up or edit your company details.</p>
+      </a>
+      <a class="link-card" href="create-job.html">
+        <h3>Create Job</h3>
+        <p>Post a new opening.</p>
+      </a>
+      <a class="link-card" href="jobs.html">
+        <h3>My Jobs</h3>
+        <p>View, update jobs and see their applications.</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+  requireAuth("Recruiter");
+  renderNavbar("dashboard");
+</script>
+</body>
+</html>

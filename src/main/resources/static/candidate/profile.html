@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Profile - Job Portal</title>
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="page">
+  <nav class="navbar" id="navbar"></nav>
+  <div class="container">
+    <h1 id="profileHeading">My Profile</h1>
+    <div class="card" style="max-width:640px;">
+      <div id="profileAlert"></div>
+      <form id="profileForm" novalidate>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="text" id="phoneNumber" maxlength="10" placeholder="10 digit number" required />
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" required />
+        </div>
+        <div class="form-group">
+          <label for="education">Education</label>
+          <input type="text" id="education" required />
+        </div>
+        <div class="form-group">
+          <label for="skills">Skills</label>
+          <input type="text" id="skills" placeholder="e.g. Java, Spring Boot, SQL" required />
+          <p class="hint">Comma separated.</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="yearOfExperience">Years of Experience</label>
+            <input type="number" id="yearOfExperience" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="resumeUrl">Resume URL</label>
+            <input type="url" id="resumeUrl" placeholder="https://..." />
+          </div>
+        </div>
+        <button type="submit" id="profileSubmitBtn" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/candidate.js"></script>
+<script>
+  requireAuth("Candidate");
+  renderNavbar("profile");
+  initCandidateProfilePage();
+</script>
+</body>
+</html>
